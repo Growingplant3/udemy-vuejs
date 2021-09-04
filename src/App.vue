@@ -1,7 +1,12 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <h2>{{ number }}</h2>
+    <LikeHeader v-slot='slotProps'>
+      <p>{{ slotProps }}</p>
+      <h2>皆さん</h2>
+      <h3>初めまして</h3>
+      <h4>さようなら</h4>
+    </LikeHeader>
+
     <LikeNumber v-bind:totalNumber='number' @my-click='incrementNumber'></LikeNumber>
     <LikeNumber :total-number='number' test-props='test'></LikeNumber>
   </div>
