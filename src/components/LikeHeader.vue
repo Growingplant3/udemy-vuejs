@@ -1,11 +1,5 @@
 <template>
   <div>
-    <p>タイトル</p>
-    <slot v-bind:user='user' text='text'></slot>
-    <hr>
-    <slot></slot>
-    <hr>
-    <p>いいね数</p>
     <slot></slot>
   </div>
 </template>
