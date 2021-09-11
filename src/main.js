@@ -35,6 +35,16 @@ Vue.component('LikeNumber', LikeNumber);
 //   }
 // });
 
+Vue.filter('upperCase', function(value) {
+  console.log('フィルタが実行される時');
+  return value.toUpperCase();
+});
+Vue.mixin({
+  created() {
+    console.log('global mixin');
+  }
+})
+
 new Vue({
   render: h => h(App)
 }).$mount('#app')

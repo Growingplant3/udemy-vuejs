@@ -1,13 +1,31 @@
 <template>
-  <p v-border:solid.round.shadow="{width: '10px', color: 'brown'}">Home</p>
+  <div>
+    <p v-border:solid.round.shadow="{width: '10px', color: 'brown'}">Home</p>
+    <h2>{{ title | upperCase }}?</h2>
+    <h2>{{ upperCaseTitle }}</h2>
+    <p>{{ subTitle | upperCase | lowerCase }}</p>
+    <p>{{ subTitle | lowerCase | upperCase }}</p>
+    <p>{{ number }}</p>
+    <button @click='number++'>+1!?</button>
+    <hr>
+    <CountNumber></CountNumber>
+    <hr>
+  </div>
 </template>
 
 <script>
+import CountNumber from './CountNumber.vue';
+import { tokyoNumber } from '@/tokyoNumber';
+
 export default {
+  mixins: [tokyoNumber],
   data() {
     return {
-      temData: 'hello'
+      temData: 'hello',
     };
+  },
+  components: {
+    CountNumber
   },
   directives: { 
     border(el, binding) {
